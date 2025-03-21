@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <div class="container">
+        <div class="music-container">
+            <div class="picbox">
+                <img id="image">
+            </div>
+            <audio id="music"controls>
+                <source src='spotifydown.com - Apocalypse.mp3' type="audio/mpeg">
+            </audio>
+            <button onclick="getrandom()">click</button>
+            <button class="play">Playing: Apocalypse</button>
+        </div>
+        <div class="secmusiccontainer">
+            <div class="picbox1">
+                <img id="picture">
+            </div>
+            <audio controls>
+                <source src='Sweet - Cigarettes After Sex.mp3' type="audio/mpeg">
+            </audio>
+            <button onclick="getrandom1()">click</button>
+            <button class="play">Playing: Sweet</button>
+        </div>
+        <div class="envelopewrapper flap">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>HAPPY BIRTHDAY SOPHIE</strong>
+                        <p>I love you.</p>
+                        <p>I love the way you look at me, especially when you're drunk.</p>
+                        <p>I love the way you show up to my dorm unnanounced.</p>
+                        <p>I love the way you casually wear my jumpers.</p>
+                        <p>I love the way I can tell you love me too.
+                        </p>
+                        <p>I never thought you would be such an important person in my life, V but I'm glad you are. I LOVE YOU <3 </p>
+                        <p></p>
+                    </div>
+                    <img src="image.png" id="chicken">
+                </div>
+            </div>
+            <div class="lock"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const envelope = document.querySelector('.envelopewrapper');
+            envelope.addEventListener('click', () => {
+                envelope.classList.toggle('flap');
+            });
+        });
+        imagearray=['IMG_0014.jpg', 'IMG_0257.jpg', 'IMG_0812.jpg','IMG_0934.JPG', 'IMG_1001.JPG', 'IMG_1028.JPG', 'IMG_9838.jpg']
+        function getrandom(){
+            random_index=Math.floor(Math.random()*imagearray.length);
+            select=imagearray[random_index];
+            document.getElementById('image').src=`./images/${select}`;
+        }
+        imagearray1=['IMG_1056.JPG', 'IMG_2910.jpg', 'IMG_3580.JPG', 'IMG_3998.JPG', 'IMG_4645.JPG', 'IMG_5158.JPG', 'IMG_6139.jpg', 'IMG_6247.jpg']
+        function getrandom1(){
+            randomindex=Math.floor(Math.random()*imagearray1.length);
+            select1=imagearray1[randomindex];
+            document.getElementById('picture').src=`./images1/${select1}`;
+        }
+    </script>
+</body>
+</html>
